@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 function Modal() {
   let [isOpen, setIsOpen] = useState(true);
   const  id  = useParams().Id
-  console.log('id from params',id);
+  //console.log('id from params',id);
   
   const [product, setProduct] = useState<Product>();
   const router = useRouter();
@@ -19,14 +19,13 @@ function Modal() {
 
   useEffect(() => {
     async function fetchProduct() {
-      console.log('hola?', id);
-      
+           
       setLoading(true)
       const res = await fetch(`https://fakestoreapi.com/products/${id}`);
       const product: Product = await res.json();
       setProduct(product);
       setLoading(false)
-      console.log('hola2?');
+     
     }
     fetchProduct();
   }, [id]);
@@ -103,7 +102,7 @@ function Modal() {
               </div>
             </div>
             )}
-          </Dialog.Panel>
+          </Dialog.Panel >
         </div>
       </div>
     </Dialog>

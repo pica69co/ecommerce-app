@@ -4,10 +4,11 @@ import { notFound } from 'next/navigation';
 type Props = {
   params: {
     id: string;
+    loading: boolean
   };
 };
 
-async function ProductPage({ params: { id } }: Props) {
+async function ProductPage({ params: { id, loading } }: Props) {
 
   try {
       // console.log(props);
